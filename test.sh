@@ -25,5 +25,19 @@ assert 0 "1-1"
 assert 20 "4/2*10"
 assert 6 "2*(4+2)/2"
 assert 2 "-1+3"
+# equal
+assert 1 "1 == 1"
+assert 0 "2 == 1"
+# neq
+assert 0 "1 != 1"
+assert 1 "2 != 1"
+# less, leq, greater, geq
+assert 1 "200 > 100 + 99"
+assert 0 "100 >= 100 + 99"
+assert 0 "100 <= 100 + 99"
+assert 1 "100 <= 100 + 99"
+# combined
+assert 1 "(100 > 1) + (100 != 1) = 2"
+
 
 echo OK
