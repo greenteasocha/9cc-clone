@@ -34,10 +34,10 @@ assert 1 "2 != 1"
 # less, leq, greater, geq
 assert 1 "200 > 100 + 99"
 assert 0 "100 >= 100 + 99"
-assert 0 "100 <= 100 + 99"
+assert 0 "200 < 100 + 99"
 assert 1 "100 <= 100 + 99"
 # combined
-assert 1 "(100 > 1) + (100 != 1) = 2"
+assert 1 "(100 > 1) + (100 != 1) == 2"
 
 
 echo OK
