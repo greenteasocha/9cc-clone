@@ -30,22 +30,22 @@ void gen(Node *node)
         printf("  idiv rdi\n");
         break;
     case ND_EQL:
-        printf("  cmp rdi, rax\n");
+        printf("  cmp rax, rdi\n");
         printf("  sete al\n");
         printf("  movzb rax, al\n");
         break;
     case ND_NEQ:
-        printf("  cmp rdi, rax\n");
+        printf("  cmp rax, rdi\n");
         printf("  setne al\n");
         printf("  movzb rax, al\n");
         break;
     case ND_LES:
-        printf("  cmp rdi, rax\n");
+        printf("  cmp rax, rdi\n");
         printf("  setl al\n");
         printf("  movzb rax, al\n");
         break;
     case ND_LEQ:
-        printf("  cmp rdi, rax\n");
+        printf("  cmp rax, rdi\n");
         printf("  setle al\n");
         printf("  movzb rax, al\n");
         break;
