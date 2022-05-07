@@ -58,4 +58,26 @@ if (memcmp(token->str, op, token->len))){
 ノード生成(ND_EQUALなどを型に追加する)
 genを改造する
 
+**enum**
+enumって内部的にはunsigned intなのか
+```
+9cc.c:361:14: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'unsigned int' [-Wformat=]
+  361 |     printf("%s\n", kind);
+      |             ~^     ~~~~
+      |              |     |
+      |              |     unsigned int
+      |              char *
+      |             %d
+
+```
+
+**アセンブリの話**
+```
+cmp rax, rdi
+sete al
+movzb rax, al
+```
+cmp自体が比較結果をするのではなく(比較はするけど(?))、
+その後の命令を何にするかによって実装する比較演算子が異なるのかあ
+
 
