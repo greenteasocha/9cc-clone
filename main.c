@@ -1,7 +1,16 @@
-#include <9cc.h>
+#include "./9cc.h"
 
 // 現在着目しているトークン
 Token *token;
+
+void error(char *fmt, ...)
+{
+    va_list ap;
+    va_start(ap, fmt);
+    vfprintf(stderr, fmt, ap);
+    fprintf(stderr, "\n");
+    exit(1);
+}
 
 int main(int argc, char **argv)
 {

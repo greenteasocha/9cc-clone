@@ -1,4 +1,4 @@
-#include <9cc.h>
+#include "./9cc.h"
 
 Token *new_token(TokenKind kind, Token *cur, char *str, int len)
 {

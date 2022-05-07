@@ -29,15 +29,7 @@ extern Token *token;
 
 // エラーを報告するための関数
 // printfと同じ引数を取る
-void error(char *fmt, ...)
-{
-
-    va_list ap;
-    va_start(ap, fmt);
-    vfprintf(stderr, fmt, ap);
-    fprintf(stderr, "\n");
-    exit(1);
-}
+void error(char *fmt, ...);
 
 // 抽象構文木のノードの種類
 typedef enum
@@ -66,3 +58,7 @@ struct Node
     Node *rhs;     // 右辺
     int val;       // kindがND_NUMの場合のみ使う
 };
+
+Token *tokenize(char *p);
+Node *expr();
+void gen(Node *node);
